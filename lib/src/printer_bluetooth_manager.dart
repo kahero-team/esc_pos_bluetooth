@@ -121,7 +121,7 @@ class PrinterBluetoothManager {
     final Completer<PosPrintResult> completer = Completer();
     if (_bufferedBytes.isNotEmpty) {
       await _writePending();
-      _runDelayed(timeout).then((dynamic v) async {
+      await _runDelayed(timeout).then((dynamic v) async {
         if (_isPrinting) {
           _isPrinting = false;
         }
