@@ -1,11 +1,11 @@
 name: esc_pos_bluetooth
 description: The library allows to print receipts using an ESC/POS thermal Bluetooth printer.
-version: 0.4.1
+version: 0.4.1-null-safety.0
 homepage: https://github.com/andrey-ushakov/esc_pos_bluetooth
 publish_to: none
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
