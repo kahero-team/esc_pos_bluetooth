@@ -77,23 +77,29 @@ class PrinterBluetoothManager {
 
   void selectPrinter(PrinterBluetooth printer) {
     _selectedPrinter = printer;
-    _bluetoothManager.state.listen((state) async {
-      switch (state) {
-        case BluetoothManager.CONNECTED:
-          _isConnected = true;
-          print('CONNECTED STATE');
-          print('CONNECTED STATE');
-          break;
-        case BluetoothManager.DISCONNECTED:
-          _isConnected = false;
-          print('DISCONNECTED STATE');
-          print('DISCONNECTED STATE');
-          break;
-        default:
-          break;
-      }
-      print('BluetoothManager.STATE => $state');
-    });
+    try {
+      _bluetoothManager.state.listen((state) async {
+        switch (state) {
+          case BluetoothManager.CONNECTED:
+            _isConnected = true;
+            print('CONNECTED STATE');
+            print('CONNECTED STATE');
+            print('CONNECTED STATE');
+            break;
+          case BluetoothManager.DISCONNECTED:
+            _isConnected = false;
+            print('DISCONNECTED STATE');
+            print('DISCONNECTED STATE');
+            print('DISCONNECTED STATE');
+            break;
+          default:
+            break;
+        }
+        print('BluetoothManager.STATE => $state');
+      });
+    } catch (err) {
+      print(err);
+    }
   }
 
   Future<PosPrintResult> _connectBluetooth(
